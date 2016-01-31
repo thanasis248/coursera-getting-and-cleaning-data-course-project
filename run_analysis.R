@@ -31,3 +31,11 @@ merged_Y <- factor(merged_Y$V1,levels =activitiesLabelsForY[,1] ,labels = activi
 names(merged_SUBJECT) <- "Subject"
 finalData <- cbind(merged_X, merged_Y, merged_SUBJECT)
 colnames(finalData)[67] <- "Activity"
+
+##STEP 5
+##From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+library(reshape2)
+finaData2Melt <- melt(finalData, id = c("Subject", "Activity"))
+finalData2 <- dcast(finaData2Melt, Subject + Activity ~ variable, mean)
+
+write.table(finalData2, file = "tidy_data.txt")
