@@ -25,9 +25,9 @@ names(merged_X) <- features[selectedFeaturesX, 2]
 activitiesLabelsForY <- read.table("activity_labels.txt")
 activitiesLabelsForY[,2]
 merged_Y <- factor(merged_Y$V1,levels =activitiesLabelsForY[,1] ,labels = activitiesLabelsForY[,2])
-names(merged_Y) <- "Activity"
 
 ##STEP 4
 ##Appropriately labels the data set with descriptive variable names. 
 names(merged_SUBJECT) <- "Subject"
 finalData <- cbind(merged_X, merged_Y, merged_SUBJECT)
+colnames(finalData)[67] <- "Activity"
