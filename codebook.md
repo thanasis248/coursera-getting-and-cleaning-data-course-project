@@ -1,4 +1,4 @@
-CODEBOOK.MD
+CODEBOOK
 
 1.Get X, Y, SUBJECT train and test datasets and Merge them to Merged_X , Merged_Y and Merged_Subject Dataset
 
